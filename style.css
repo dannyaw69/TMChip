@@ -254,6 +254,7 @@ img{ max-width: 100%; display: block; }
   object-fit: cover;
   object-position: top center;
   display: block;
+  cursor: zoom-in;
 }
 .slide-nav{
   position: absolute;
@@ -475,3 +476,42 @@ img{ max-width: 100%; display: block; }
   .cta-band .hero-actions{ justify-content: center; margin: 0; }
   .btn{ padding: 12px 20px; font-size: 0.9rem; }
 }
+
+/* ============ Lightbox (klik foto slide untuk perbesar) ============ */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 17, 20, 0.9);
+  padding: 32px;
+}
+.lightbox.is-open{ display: flex; }
+.lightbox-img{
+  max-width: min(92vw, 480px);
+  max-height: 88vh;
+  width: auto;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+}
+.lightbox-close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.lightbox-close:hover{ background: rgba(255,255,255,0.25); }
